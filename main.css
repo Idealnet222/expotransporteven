@@ -1,0 +1,287 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+}
+
+
+
+/* HEADER */
+
+header{
+    height: 100px;
+    background: black;
+    padding: 0 50px;
+    color: rgb(255, 81, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: rgb(255, 81, 0);
+    font-weight: 200;
+    font-size:large;
+}
+
+.menu a{
+    color: rgb(255, 81, 0);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.7s;
+    
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    transition: 0,4s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: rgb(255, 81, 0);
+}
+
+#check{
+    display: none;
+}
+
+/*BANNER*/
+
+#banner{
+    padding: 0 50px;
+    background-image: url(imagenes/1.jpg);
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner::before{
+    content: ´´;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    width: 100px;
+    height: 45vh;
+    left: 0;
+}
+
+.contenido-banner{
+    position: relative;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.contenido-banner h3{
+    font-size: 30px;
+    font-weight: 400;
+    padding: 10px 0px;
+}
+
+.contenido-banner h3 span{
+    font-weight: 600;
+
+}
+
+.boton-empezar{
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgb(255, 81, 0);
+    padding: 20px 40px;
+    align-self: baseline;
+    transition: all 0.7s; 
+}
+
+.boton-empezar:hover{
+    background: rgb(255, 81, 0);
+    
+}
+
+/*PERSONAS*/
+
+#personas{
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#personas img{
+    border-radius: 100%;
+}
+
+#personas div{
+    padding: 30px 30px;
+}
+
+#personas div h2{
+    color: rgb(255, 81, 0);
+    /*font-size: 20px;*/
+    margin: 15px 0px;
+}
+
+#personas div p{
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+/* RESPONSIVE */
+@media(max-width: 768px){
+    /*Header*/
+    .mostrar-menu,
+    .esconder-menu{
+        display:block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #222;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+}
+
+body{
+    background-color: black;
+}
+
+#inf-gen{
+    margin: auto;
+    margin-top: 10px;
+    margin-block-end: 50px;
+    width: 80%;
+    height: 700px;
+    background-color: rgb(211, 211, 211);
+    
+}
+
+#inf-gen p{
+    padding: 15px 30px;
+    color: #222;
+}
+
+/*Codigo de acordeon*/
+
+.accordionholder{
+    max-width: 880px;
+    margin: 30px auto;
+
+}
+
+
+.accordionholder input{
+    display: none;
+
+}
+
+.accordionholder label{
+    display: block;
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+    background: rgb(255, 81, 0);
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.accordionholder label:hover{
+    background: rgba(228, 79, 33, 0.667);
+}
+
+.insidecontainer{
+    display: block;
+    height: 0px;
+    padding: 0px 15px;
+    font-family: 'roboto', sans-serif;
+    font-size: 16px;
+    color: aliceblue;
+    background: rgb(32, 32, 32);
+    overflow: hidden;
+}
+
+.accordionholder input:checked ~ .insidecontainer{
+    height: 250px;
+    overflow: scroll;
+}
+/*TABONE PARA el + o - */
+#tabone[type=checkbox] + label::before{
+    content: '+ ';
+}
+
+#tabone[type=checkbox]:checked + label::before{
+    content: '- ';
+}
+
+#tabone2[type=checkbox] + label::before{
+    content: '+ ';
+}
+
+#tabone2[type=checkbox]:checked + label::before{
+    content: '- ';
+}
+
+#tabone4[type=checkbox] + label::before{
+    content: '+ ';
+}
+
+#tabone4[type=checkbox]:checked + label::before{
+    content: '- ';
+}
+
+#tabone5[type=checkbox] + label::before{
+    content: '+ ';
+}
+
+#tabone5[type=checkbox]:checked + label::before{
+    content: '- ';
+}
+
+#tabone3[type=checkbox] + label::before{
+    content: '+ ';
+}
+
+#tabone3[type=checkbox]:checked + label::before{
+    content: '- ';
+}
+
+p{
+    padding: 10px;
+}
+
+ul{
+    margin: 30px;
+}
